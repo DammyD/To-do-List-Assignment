@@ -56,9 +56,9 @@ function deleteCheck(e) {
     //   Animation
       task.classList.add("fall");
       removeLocalTasks(task);
-      task.addEventListener("transitioned", function() {
+      task.addEventListener('transitioned', function() {
         task.remove();
-      }) 
+      }); 
     }
 
     // check task
@@ -73,7 +73,7 @@ function deleteCheck(e) {
 function saveLocalTasks(task) {
     // Check storage
     let tasks;
-    if(localStorage.getItem('task') === null) {
+    if(localStorage.getItem('tasks') === null) {
         tasks = [];
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -82,10 +82,11 @@ function saveLocalTasks(task) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Get task
 function getTasks() {
     let tasks;
 
-    if(localStorage.getItem('task') === null) {
+    if(localStorage.getItem('tasks') === null) {
         tasks = [];
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -121,7 +122,7 @@ function getTasks() {
 function removeLocalTasks(task) {
     let tasks;
 
-    if(localStorage.getItem('task') === null) {
+    if(localStorage.getItem('tasks') === null) {
         tasks = [];
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
